@@ -33,7 +33,7 @@ const updateProduct = asyncHandler(async function (req, res) {
   const update = await apiSchema.findByIdAndUpdate(req.params.id, {
     quantity: req.params.update_quantity,
   });
-  const data = await apiSchema.findOne(req.res.id);
+  const data = await apiSchema.findOne(req.params.id);
   res.send({ data, message: "Product Updated" });
 });
 
